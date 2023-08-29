@@ -1,0 +1,106 @@
+ <!-- Main Content -->
+ <div class="main-content">
+     <section class="section">
+         <div class="section-body">
+             <!-- add content here -->
+
+             <div class="card">
+                 <div class="card-header text-light bg-blue">
+                     Input Galeri
+                 </div>
+                 <div class="card-body table-responsive">
+                     <form action="main/savegaleri" id="save" enctype="multipart/form-data" method="post">
+                         <table class="table">
+                             <tr>
+                                 <td>Judul Galeri</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="judul" placeholder="Judul Galeri">
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>Status</td>
+                                 <td>
+                                     <select name="status" id="" class="form-control">
+                                         <option value="">Pilih</option>
+                                         <option value="Publish">Publish</option>
+                                         <option value="Draft">Draft</option>
+                                     </select>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>Foto / Gambar</td>
+                                 <td>
+                                     <center>
+                                         <img id="blah" class='img-fluid mb-3' width='280' src="assets/nofoto.jpg" alt="your image" />
+                                     </center>
+                                     <input type="file" name="gambar" class="form-control mb-3 bersih" onchange="readURL(this);" aria-describedby="inputGroupFileAddon01">
+                                     <span class="badge badge-warning"><strong>Informasi</strong> Input Gambar Maksimal 2mb !</span>
+
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td></td>
+                                 <td>
+                                     <button type="reset" class="btn btn-danger"><i class="fa fa-sync-alt"></i> Batal</button>
+                                     <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>
+                                 </td>
+                             </tr>
+                         </table>
+                     </form>
+                 </div>
+             </div>
+
+
+         </div>
+     </section>
+
+ </div>
+
+ <script>
+     $("#save").on("submit", function(e) {
+         e.preventDefault();
+         $.ajax({
+             type: "post",
+             url: $(this).attr('action'),
+             data: new FormData(this),
+             processData: false,
+             contentType: false,
+             cache: false,
+             async: false,
+             success: function(response) {
+                 Swal.fire({
+                     title: "Informasi",
+                     text: "Data berhasil disimpan!",
+                     icon: "success",
+                     showCancelButton: false,
+                     closeOnConfirm: false,
+                     showLoaderOnConfirm: true,
+                     allowOutsideClick: () => !Swal.isLoading()
+                 }).then((result) => {
+                     window.location.reload();
+                 })
+             },
+             error: function(e) {
+                 $.notify("Gagal Simpan", "error");
+             }
+         });
+     });
+
+     function readURL(input) {
+         if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+                 $('#blah').attr('src', e.target.result);
+             };
+
+             reader.readAsDataURL(input.files[0]);
+         }
+     }
+
+
+     $(".summernote").summernote({
+         dialogsInBody: true,
+         minHeight: 250
+     });
+ </script>

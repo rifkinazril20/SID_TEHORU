@@ -1,0 +1,704 @@
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.collapsible {
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    position: absolute;
+    background: #3f3f3f;
+    height: 35px;
+    width: 40px;
+    left: 985px;
+    top: 10px;
+    color: #EEEEEE;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+.collxapsible {
+    z-index: 100;
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    background: #3f3f3f;
+    height: 35px;
+    width: 45px;
+    left: 185px;
+    top: 10px;
+    color: #EEEEEE;
+    position: absolute;
+}
+
+.collyapsible {
+    z-index: 100;
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    background: #3f3f3f;
+    height: 35px;
+    width: 45px;
+    left: 240px;
+    top: 10px;
+    color: #EEEEEE;
+    position: absolute;
+}
+
+.collzapsible {
+    z-index: 100;
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    background: #3f3f3f;
+    height: 35px;
+    width: 45px;
+    right: 65px;
+    top: 10px;
+    color: #EEEEEE;
+    position: absolute;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.contentx {
+    padding: 0 18px;
+    display: block;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.contenty {
+    padding: 0 18px;
+    display: block;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.contentz {
+    padding: 0 18px;
+    display: block;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+
+/* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+#map {
+    height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+</style><style>.map-container {
+    position: relative;
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+#myImg2 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg2:hover {
+    opacity: 0.7;
+}
+
+#myImg3 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg3:hover {
+    opacity: 0.7;
+}
+
+#myImg4 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg4:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modalx {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: -50px;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-contentx {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#captionx {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-contentx,
+#captionx {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.closex {
+    position: absolute;
+    top: 50px;
+    right: 335px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closex:hover,
+.closex:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-contentx {
+        width: 100%;
+    }
+}
+
+div#loadPos {
+    position: absolute;
+    z-index: 50;
+    background: #3f3f3f;
+    height: 35px;
+    width: 700px;
+    top: 10px;
+    left: 285px;
+    color: #EEEEEE;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#loadSearch {
+    position: absolute;
+    z-index: 100;
+    background: #3f3f3f;
+    height: 120px;
+    width: 240px;
+    top: 10px;
+    left: 1030px;
+    color: #EEEEEE;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#loadToggle {
+    position: absolute;
+    z-index: 50;
+    background: #3f3f3f;
+    height: 190px;
+    width: 210px;
+    top: 10px;
+    left: 20px;
+    color: #EEEEEE;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: top;
+}
+
+div#heading {
+    top: 10px;
+    right: 65px;
+    position: absolute;
+    z-index: 50;
+    height: 245px;
+    width: 220px;
+    background: #3f3f3f;
+    box-shadow: -5px 0px 5px #222222;
+}
+
+div#logo {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 45px;
+}
+
+div#title1 {
+    position: absolute;
+    font-size: 125%;
+    color: #eeeeee;
+    margin-left: 20px;
+    margin-top: 105px;
+    margin-right: -10px;
+}
+
+div#title2 {
+    position: absolute;
+    font-size: 90%;
+    color: #eeeeee;
+    margin-left: 30px;
+    margin-top: 125px;
+}
+
+div#title3 {
+    position: absolute;
+    font-size: 70%;
+    top: 40px;
+    color: white;
+    left: 10px;
+}
+
+div#title4 {
+    position: absolute;
+    font-size: 70%;
+    top: 55px;
+    color: white;
+    left: 10px;
+}
+
+div#title5 {
+    position: absolute;
+    font-size: 70%;
+    top: 30px;
+    color: white;
+    left: 10px;
+}
+
+div#title6 {
+    position: absolute;
+    font-size: 90%;
+    color: #eeeeee;
+    right: 5px;
+    top: 5px;
+}
+
+div#resdiv {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 60px;
+    width: 220px;
+    top: 255px;
+    right: 65px;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#resdix {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 60px;
+    width: 220px;
+    top: 345px;
+    right: 65px;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#resdixy {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 60px;
+    width: 220px;
+    top: 435px;
+    right: 65px;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#restatdiv {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 30px;
+    width: 220px;
+    top: 315px;
+    right: 65px;
+    color: #FF998F;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#restatdix {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 30px;
+    width: 220px;
+    top: 405px;
+    right: 65px;
+    color: #FF998F;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#restatdixy {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 30px;
+    width: 220px;
+    top: 495px;
+    right: 65px;
+    color: #FF998F;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#restatdiy {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 75px;
+    width: 220px;
+    top: 525px;
+    right: 65px;
+    color: #FF998F;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#restatdiz {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 50px;
+    width: 220px;
+    top: 600px;
+    right: 65px;
+    color: #FF998F;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#restatdizx {
+    position: absolute;
+    z-index: 101;
+    background: #3f3f3f;
+    height: 50px;
+    width: 220px;
+    top: 650px;
+    right: 65px;
+    color: #FF998F;
+    box-shadow: -5px 0px 10px #222222;
+}
+
+div#statb {
+    position: absolute;
+    z-index: 102;
+    width: 370px;
+    left: 90px;
+    bottom: 30px;
+    margin: auto;
+    height: 30px;
+    font-size: 80%;
+    background: white;
+    box-shadow: 5px 5px 5px #222222;
+}
+
+div#iconlow {
+    position: absolute;
+    margin-left: 10px;
+    line-height: 20px;
+}
+
+div#ketlow {
+    position: absolute;
+    line-height: 20px;
+    margin-left: 25px;
+}
+
+div#iconmed {
+    position: absolute;
+    margin-left: 112px;
+    line-height: 20px;
+}
+
+div#ketmed {
+    position: absolute;
+    line-height: 20px;
+    margin-left: 127px;
+}
+
+div#iconhi {
+    position: absolute;
+    margin-left: 260px;
+    line-height: 20px;
+}
+
+div#kethi {
+    position: absolute;
+    line-height: 20px;
+    margin-left: 275px;
+}
+
+div#resiconlow {
+    position: absolute;
+    margin-left: 19px;
+    line-height: 30px;
+}
+
+div#resiconlow1x {
+    position: absolute;
+    margin-left: 60px;
+    line-height: 10px;
+}
+
+div#resiconlow1y {
+    position: absolute;
+    margin-left: 64px;
+    line-height: 30px;
+}
+
+div#resiconlow2x {
+    position: absolute;
+    margin-left: 100px;
+    line-height: 10px;
+}
+
+div#resiconlow2y {
+    position: absolute;
+    margin-left: 104px;
+    line-height: 30px;
+}
+
+div#resiconlow3x {
+    position: absolute;
+    margin-left: 140px;
+    line-height: 10px;
+}
+
+div#resiconlow3y {
+    position: absolute;
+    margin-left: 144px;
+    line-height: 30px;
+}
+
+div#resiconlow4x {
+    position: absolute;
+    margin-left: 180px;
+    line-height: 10px;
+}
+
+div#resiconlow4y {
+    position: absolute;
+    margin-left: 184px;
+    line-height: 30px;
+}
+
+div#resketlow1x {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 34px;
+}
+
+div#resketlow2 {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 34px;
+}
+
+div#resketlow2x {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 34px;
+}
+
+div#resiconmed {
+    position: absolute;
+    margin-left: 79px;
+    line-height: 30px;
+}
+
+div#resketmed1x {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 94px;
+}
+
+div#resketmed2 {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 94px;
+}
+
+div#resketmed2x {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 94px;
+}
+
+div#resiconhi {
+    position: absolute;
+    margin-left: 139px;
+    line-height: 30px;
+}
+
+div#reskethi1x {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 154px;
+}
+
+div#reskethi2 {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 154px;
+}
+
+div#reskethi2x {
+    position: absolute;
+    line-height: 30px;
+    margin-left: 154px;
+}
+
+div#rescn1x {
+    position: absolute;
+    z-index: 102;
+    font-size: 220%;
+    top: 5px;
+    color: #FB4C2F;
+    right: 100px;
+}
+
+div#rescn2 {
+    position: absolute;
+    z-index: 102;
+    font-size: 220%;
+    top: 5px;
+    color: #FB4C2F;
+    right: 100px;
+}
+
+div#rescn2x {
+    position: absolute;
+    z-index: 102;
+    font-size: 220%;
+    top: 5px;
+    color: #FB4C2F;
+    right: 100px;
+}
+
+div#rescn3 {
+    color: white;
+    display: inline-block;
+}
+
+div#rescn4 {
+    color: white;
+    display: inline-block;
+}
+
+div#rescn5 {
+    color: white;
+    display: inline-block;
+}
+
+div#rescn6 {
+    color: white;
+    display: inline-block;
+}
+
+div#rescn7 {
+    color: white;
+    display: inline-block;
+}
+
+div#hstx {
+    position: absolute;
+    z-index: 102;
+    font-size: 80%;
+    top: 5px;
+    color: white;
+    left: 20px;
+}
+
+div#hstl {
+    position: absolute;
+    z-index: 102;
+    font-size: 120%;
+    top: 17px;
+    color: white;
+    right: 20px;
+}
